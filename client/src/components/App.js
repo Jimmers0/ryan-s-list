@@ -20,9 +20,9 @@ export default props => {
     
         <nav /> 
         <div className="container">
-        <Route exact path="/" component={nav}/>
-        <Route exact path="/home" component={Mainpage}/>
-        <Route exact path="/home/:name" component={Subcategory}/>
+        
+        <Route exact path="/" component={Mainpage}/>
+        <Route exact path="/:slug" component={Subcategory}/>
         
 
       </div>

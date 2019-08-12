@@ -90,9 +90,9 @@ export default props => {
   <div className="middle">
         {categories.map((item, i) => (
           <div key={'item' + i} className="section">
-          <h2 className="title">{item.name}</h2>
+          <Link to={"/" + item.slug}><h2 className="title">{item.name}</h2></Link>
           {item.child_categories.map(cat => (
-            <Link to={"/home/" + cat.slug} style={{textDecoration: 'none'}}><p className="subcats">{cat.name}</p></Link>
+            <Link to={"/" + cat.slug} style={{textDecoration: 'none'}}><p className="subcats">{cat.name}</p></Link>
           )) }
           </div>
         ))}

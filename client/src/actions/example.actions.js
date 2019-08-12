@@ -14,5 +14,24 @@ export function getMainCat() {
   })
 }
 
+export function getPosts(slug) {
+  axios.get('/api/posts/' + slug).then(resp =>  {
+    console.log('actions: ' + resp.data)
+    store.dispatch({
+      type: 'GET_POSTS',
+      payload: resp.data
+    })
+  })
+}
+
+export function getCategoryName(slug){
+  axios.get('/api/category/' + slug).then(resp => {
+    store.dispatch({
+      type: 'GET_CURRENT_CATEGORY',
+      payload: resp.data.name
+    })
+  })
+}
+
 
 

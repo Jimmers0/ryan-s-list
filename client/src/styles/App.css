@@ -253,3 +253,73 @@ html {box-sizing:border-box;}
     border-bottom: 1px solid rgb(165, 165, 165);
 }
 
+.subcontainer {
+    width: 100%;
+}
+
+.header {
+    height: 50px;
+    background: rgb(238, 238, 238);
+    width: unset;
+    border-bottom: 1px solid rgb(165, 165, 165);
+    
+}
+
+.space{
+    height: 10px;
+}
+
+.cl {
+    width: 35px;
+    height: 30px;
+    border-radius: 20px;
+    background: white;
+    text-align: center;
+    line-height: 30px;
+    color: rgb(75, 25, 128);
+    border: 1px solid rgb(165, 165, 165);
+    margin-left: 10px;
+    
+}
+
+.lasvegas {
+    height: 30px;
+    margin-left: 30px;
+}
+
+.category {
+    margin-left: 10px;
+}
+
+.arrow {
+    padding-top: 5px;
+    padding-left: 10px;
+}
+
+.info{
+    display: flex;
+}
+
+.categoryname {
+
+    color: rgb(0, 26, 228);
+    margin: 20px 0 20px 20px;
+    font-size: 25px;
+
+
+}
+
+.post {
+    display: flex;
+    align-content: space-between;
+
+}
+
+.posttitle {
+    margin: 30px;
+}
+
+.posttime{
+    margin: 30px;
+}
+
