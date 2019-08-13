@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react'
-import { getData, getMainCat } from '../actions/example.actions'
+import { getMainCat } from '../actions/example.actions'
 import { useSelector } from 'react-redux'
 import {Link} from 'react-router-dom'
 
 export default props => {
 
-  let num = 1
+
   useEffect(() => {
     getMainCat()
   }, [])
@@ -90,7 +90,7 @@ export default props => {
   <div className="middle">
         {categories.map((item, i) => (
           <div key={'item' + i} className="section">
-          <Link to={"/" + item.slug}><h2 className="title">{item.name}</h2></Link>
+          <Link to={"/" + item.slug} style={{textDecoration: 'none', overflow: 'hidden'}}><h2 className="title">{item.name}</h2></Link>
           {item.child_categories.map(cat => (
             <Link to={"/" + cat.slug} style={{textDecoration: 'none'}}><p className="subcats">{cat.name}</p></Link>
           )) }

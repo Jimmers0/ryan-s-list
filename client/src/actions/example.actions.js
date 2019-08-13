@@ -33,5 +33,19 @@ export function getCategoryName(slug){
   })
 }
 
+export function sendPost(title, content, slug) {
+  axios.post('/api/post', { title, content, slug }).then (resp => {
+    getPosts(slug)
+  })
+}
+
+export function getPost(id) {
+  axios.get('/api/posting/' + id).then(resp => {
+    store.dispatch({
+      type: 'GET_POST',
+      payload: resp.data
+    })
+  })
+}
 
 

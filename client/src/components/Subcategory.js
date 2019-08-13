@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import {Link} from 'react-router-dom'
-import Axios from 'axios';
 import { getPosts, getCategoryName } from '../actions/example.actions'
 import moment from 'moment'
 
@@ -28,6 +27,8 @@ export default props => {
 
     <div className="subcontainer" > 
 
+
+
     <div className="header">
 
         <div className="space"> </div>
@@ -52,14 +53,15 @@ export default props => {
 
 
 
-
-    <div className="categoryname">{category}</div>
+        <Link to="/" className="home">Go To Home</Link>
+    <div className="categoryname">{category} - <Link to={"/" + props.match.params.slug + "/post"}>Add Post</Link> </div>
     
     {posts.map(post => (
         <div className="post">
-        <Link to={"/posts/" + post.id}><p className="posttitle">{post.title}</p></Link>
+
+        <Link to={"/post/" + post.id}><p className="posttitle">{post.title}</p></Link>
         
-        <p className="posttime"> 
+        <p className="posttime">Posted{' '}
         {moment(post.time_created).fromNow()}
         </p>
         </div>

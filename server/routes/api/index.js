@@ -1,17 +1,6 @@
 const router = require('express').Router()
 const conn = require('../../db')
 
-
-// router.get('/home', (req, res, next) => {
-//   const sql = `
-//   SELECT name FROM categories WHERE parent_id IS NULL
-//   `
-//   conn.query(sql, (error, results, fields) => {
-//     res.json(results)
-//     console.log('index ' + results)
-//   })
-// })
-
 router.get('/home', (req, res, next) => {
   const sql = `
   SELECT c.name, c.slug, c.id, p.name as parentName, p.id as parentId, p.slug as parentSlug 
@@ -82,6 +71,37 @@ router.get('/posts/:slug', (req, res, next) => {
     res.json(results)
   })
 
+})
+
+router.post('/post', (req, res, next) => {
+  const { slug, title, content} = req.body
+
+  const getsql = `SELECT id FROM categories WHERE slug = ?`
+
+  conn.query(getsql, [slug], (err, results, fields) => {
+    const id = results[0].id
+    const sql = `
+  INSERT INTO posts (title, content, category_id) VALUES (?, ?, ?)
+  
+  `
+
+  conn.query(sql, [title, content, id], (err, results, fields) => {
+    res.json(results)
+  })
+    
+  })
+
+})
+
+
+router.get('/posting/:id', (req, res, next) => {
+  const id = req.params.id
+
+  const sql = `SELECT * FROM posts WHERE id = ?`
+
+  conn.query(sql, [id], (err, results, fields) => {
+    res.json(results[0])
+  })
 })
 
 

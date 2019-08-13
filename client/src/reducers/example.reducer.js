@@ -1,7 +1,8 @@
 const initialState = {
   categories: [],
   posts: [],
-  category: ''
+  category: '',
+  post: {}
 }
 
 export default function(state = initialState, action) {
@@ -12,6 +13,8 @@ export default function(state = initialState, action) {
       return {...state, posts: action.payload}
     case 'GET_CURRENT_CATEGORY':
       return {...state, category: action.payload}
+    case 'GET_POST':
+      return {...state, post: action.payload} 
     default:
       return state
   }

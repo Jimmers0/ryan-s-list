@@ -208,11 +208,13 @@ html {box-sizing:border-box;}
     line-height: auto;
     position: relative;
     top: -425px;
+
+
 }
 
 
 .title {
-    width: 200px;
+    width: 170px;
     height: 30px;
     padding-top: 2px;
     border-top: 1px solid rgb(165, 165, 165);
@@ -224,6 +226,36 @@ html {box-sizing:border-box;}
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     
+}
+
+.section:nth-child(8) .title {
+    width: 170px;
+    height: 30px;
+    padding-top: 2px;
+    border-top: 1px solid rgb(165, 165, 165);
+    border-bottom: 1px solid rgb(165, 165, 165);
+    background: rgb(238, 238, 238);
+    margin: 0px 0px 0px 0px;
+    text-align: center;
+    color: rgb(0, 26, 228);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding-right: 40px;
+}
+
+.section:nth-child(3) .title {
+    width: 170px;
+    height: 30px;
+    padding-top: 2px;
+    border-top: 1px solid rgb(165, 165, 165);
+    border-bottom: 1px solid rgb(165, 165, 165);
+    background: rgb(238, 238, 238);
+    margin: 0px 0px 0px 0px;
+    text-align: center;
+    color: rgb(0, 26, 228);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    padding-right: 40px;
 }
 
 .subcats{
@@ -254,6 +286,10 @@ html {box-sizing:border-box;}
 }
 
 .subcontainer {
+    width: 100%;
+}
+
+.subcontainer2 {
     width: 100%;
 }
 
@@ -323,3 +359,43 @@ html {box-sizing:border-box;}
     margin: 30px;
 }
 
+.home {
+    margin: 20px;
+}
+
+.button {
+    margin: 10px;
+    border-radius: 10px;
+    color: rgb(0, 26, 228);
+}
+
+.containerpost {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+
+.titlepost {
+    margin: 30px;
+}
+
+.label {
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+.contentpost {
+    font-size: 20px;
+}
+
+.buttonpost {
+    margin: 30px;
+    border-radius: 20px;
+    color: rgb(0, 26, 228);
+}
+
+.posting {
+    margin: 50px;
+}
